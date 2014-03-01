@@ -74,7 +74,7 @@ NSString * const MGMAIAllowStrangers = @"MGMAIAllowStrangers";
 						WebView *webview = (WebView *)[[(id<MGMChatViewController>)[[[theContent chat] chatContainer] chatViewController] messageDisplayController] messageView];
 						shouldScroll = [webview stringByEvaluatingJavaScriptFromString:@"nearBottom();"];
 					}
-					NSString *image = [NSString stringWithFormat:@"<img src=\"%@\" style=\"max-width: 100%%; max-height: 100%%;\" onLoad=\"imageSwap(this, false);alignChat(%@);\" />", link, shouldScroll];
+					NSString *image = [NSString stringWithFormat:@"<img src=\"%@\" style=\"max-width: 100%%; max-height: 50%%;\" onLoad=\"imageSwap(this, false);alignChat(%@);\" />", link, shouldScroll];
 					NSRange replaceRange = NSMakeRange(linkStartRange.location+linkStartRange.length, linkReplaceEndRange.location-(linkStartRange.location+linkStartRange.length));
 					[html replaceCharactersInRange:replaceRange withString:image];
 					range.location += [image length]-replaceRange.length;
